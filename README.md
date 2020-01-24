@@ -17,8 +17,8 @@ func makeDataSource() -> UITableViewDiffableDataSource<Section, User> {
 2) We make a Published response to use it for emiting changes over combine framework
 
 ```
-    @Published var response: ViewState<[User]> = .loading
- ```
+@Published var response: ViewState<[User]> = .loading
+```
  
  3) We hande the response over a ViewState enum 
 
@@ -34,4 +34,4 @@ private func handle(response: ViewState<[User]>?) {
             loadingIndicator.isHidden = true
             insert(list: data) }
     }
-    ````
+ ```
