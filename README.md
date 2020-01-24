@@ -10,7 +10,6 @@ func makeDataSource() -> UITableViewDiffableDataSource<Section, User> {
                 let cell = UserTableViewCell.dequeueInTableView(tableView, forIndexPath: indexPath)
                 cell.configureCell(with: user)
                 return cell
-            }
-        )
+            })
     }
  ```
