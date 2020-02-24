@@ -15,7 +15,7 @@ enum Section: CaseIterable {
     case coworkers
 }
 
-class DiffableViewController: UIViewController {
+final class DiffableViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
