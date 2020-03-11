@@ -34,7 +34,10 @@ final class DiffableViewController: UIViewController {
         tableView.dataSource = dataSource
         diffableViewModelSubscriber = diffableViewModel.$response
             .receive(on: DispatchQueue.main)
-            .assign(to: \.response, on: self)
+            .sink { [weak self] input in
+                guard let `self` = self else { return }
+                self.response = input
+            }
     }
     
     deinit {
